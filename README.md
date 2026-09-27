@@ -74,7 +74,16 @@ Commits are linted with commitlint against the
 
 ## Using this as a template
 
-Use GitHub's **"Use this template"** button on
+The fastest way, using the [GitHub CLI](https://cli.github.com/) (creates a new
+repo from this template and clones it in one command):
+
+```sh
+gh repo create my-new-project --template HDv2b/node-base --public --clone
+cd my-new-project
+pnpm install
+```
+
+Alternatively, use GitHub's **"Use this template"** button on
 [HDv2b/node-base](https://github.com/HDv2b/node-base), or clone it and re-init git:
 
 ```sh
