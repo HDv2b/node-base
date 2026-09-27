@@ -1,14 +1,56 @@
 {
   "name": "node-base",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Baseline Node.js + TypeScript project template",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsup",
+    "dev": "tsx watch src/index.ts",
+    "test": "node --import tsx --test test/**/*.test.ts",
+    "test:coverage": "node --import tsx --experimental-test-coverage --test test/**/*.test.ts",
+    "lint": "biome check .",
+    "lint:fix": "biome check --write .",
+    "format": "biome format --write .",
+    "typecheck": "tsc --noEmit",
+    "changeset": "changeset",
+    "release": "changeset publish",
+    "prepare": "husky"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": {
+    "name": "Hussein Duvigneau",
+    "url": "https://hdv.dev"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HDv2b/node-base.git"
+  },
+  "homepage": "https://github.com/HDv2b/node-base#readme",
+  "bugs": {
+    "url": "https://github.com/HDv2b/node-base/issues"
+  },
   "devEngines": {
     "packageManager": {
       "name": "pnpm",
@@ -17,5 +59,22 @@
     }
   },
   "packageManager": "pnpm@12.6.0",
-  "type": "module"
+  "devDependencies": {
+    "@biomejs/biome": "^2.5.14",
+    "@changesets/changelog-github": "^1.0.1",
+    "@changesets/cli": "^3.0.3",
+    "@commitlint/cli": "^21.2.3",
+    "@commitlint/config-conventional": "^21.2.3",
+    "@types/node": "^20.19.43",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.6.0",
+    "tsup": "^8.5.1",
+    "tsx": "^4.23.15",
+    "typescript": "^6.0.3"
+  },
+  "lint-staged": {
+    "*.{ts,js,cjs,mjs,json}": [
+      "biome check --write --no-errors-on-unmatched"
+    ]
+  }
 }

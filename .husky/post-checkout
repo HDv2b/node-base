@@ -1,0 +1,9 @@
+if [ "$3" = "1" ]; then
+  if [ -f .nvmrc ]; then
+    echo "🔁 Switching Node version via .nvmrc..."
+    nvm use "$(cat .nvmrc)"
+  fi
+
+  echo "📦 Installing dependencies..."
+  pnpm install
+fi
