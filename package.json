@@ -54,11 +54,11 @@
   "devEngines": {
     "packageManager": {
       "name": "pnpm",
-      "version": "12.6.0",
+      "version": "12.11.2",
       "onFail": "download"
     }
   },
-  "packageManager": "pnpm@12.6.0",
+  "packageManager": "pnpm@12.11.2",
   "devDependencies": {
     "@biomejs/biome": "^2.5.14",
     "@changesets/changelog-github": "^1.0.1",
