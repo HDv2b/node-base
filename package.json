@@ -22,7 +22,7 @@
     "dist"
   ],
   "engines": {
-    "node": ">=20"
+    "node": ">=24"
   },
   "scripts": {
     "build": "tsup",
@@ -52,6 +52,11 @@
     "url": "https://github.com/HDv2b/node-base/issues"
   },
   "devEngines": {
+    "runtime": {
+      "name": "node",
+      "version": ">=24",
+      "onFail": "warn"
+    },
     "packageManager": {
       "name": "pnpm",
       "version": "12.11.2",
@@ -65,7 +70,7 @@
     "@changesets/cli": "^3.0.3",
     "@commitlint/cli": "^21.2.3",
     "@commitlint/config-conventional": "^21.2.3",
-    "@types/node": "^20.19.43",
+    "@types/node": "^24.0.0",
     "husky": "^9.1.7",
     "lint-staged": "^17.6.0",
     "tsup": "^8.5.1",

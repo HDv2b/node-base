@@ -32,8 +32,9 @@ with linting/formatting, testing, git hooks, versioning, and CI.
 
 ## Requirements
 
-- Node.js (version pinned in [`.nvmrc`](./.nvmrc); run `nvm use`)
-- [pnpm](https://pnpm.io/) `12.6.0` (see `packageManager` in `package.json`)
+- Node.js 24 LTS or newer (the template selects 24 through [`.nvmrc`](./.nvmrc);
+  run `nvm use`)
+- [pnpm](https://pnpm.io/) `12.11.2` (see `packageManager` in `package.json`)
 
 ## Getting started
 
